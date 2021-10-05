@@ -88,6 +88,8 @@ def delete_index(index):
     if report:
         report += "\n"
         return report
+    else:
+        return ""
 
 report_full = ""
 report_full += delete_index(indexes_index_1_to_delete)
