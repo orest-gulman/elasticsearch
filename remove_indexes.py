@@ -29,7 +29,6 @@ try:
     r_get = requests.get(url + '/_cat/indices?h=index,store.size&format=json', auth = HTTPBasicAuth(admin, password), verify=False, timeout=60, headers={'Connection':'close'})
     if r_get.status_code == 200:
         try:
-            #indexes_all = (r.content.decode().split())
             indexes = json.loads(r_get.content.decode())
         except Exception as e:
             send_mail(str(e))
